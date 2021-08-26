@@ -12,6 +12,7 @@ export const letters = {
 }
 
 export const convert = (input:string) => {
+    console.log("Convert called")
     const digits:number[] = String(input).split('').map(Number)
     let lists:string[][] = [[]]
     for (let digit of digits) {

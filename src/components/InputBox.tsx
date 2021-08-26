@@ -1,11 +1,10 @@
 import Button from './Button'
-import {FormEvent, useEffect, useRef} from 'react';
+import {ChangeEvent, useEffect, useRef} from 'react';
 
 type InputBoxProps = {
     input:string
-    onChange:(event:FormEvent<HTMLInputElement>)=>void
-    onConvertSubmit:(event:FormEvent)=>void  
-
+    onChange:(event:ChangeEvent) => void
+    onConvertSubmit:(inputNumber:string) => void 
 }
 
 const InputBox = ({input, onChange, onConvertSubmit}:InputBoxProps) => {
@@ -18,10 +17,8 @@ const InputBox = ({input, onChange, onConvertSubmit}:InputBoxProps) => {
     return (
         <div className="Searchbox">
             <h3>Input:</h3>
-            <form onSubmit={onConvertSubmit}>
-                <input type="text" value={input} onChange={onChange} ref={inputRef as any}/>
-                <button type='submit'>Convert</button>
-            </form>
+            <input type="text" value={input} onChange={onChange} ref={inputRef as any}/>
+            <Button className='button' onClick={() => onConvertSubmit(input)}>Convert</Button>
         </div>
     )
 }

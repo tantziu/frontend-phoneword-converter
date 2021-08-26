@@ -1,26 +1,27 @@
 import Button from './Button'
 import {ChangeEvent, useEffect, useRef} from 'react';
 
-type InputBoxProps = {
+type SearchProps = {
     input:string
     onChange:(event:ChangeEvent) => void
-    onConvertSubmit:(inputNumber:string) => void 
+    onConvert:(inputNumber:string) => void 
 }
 
-const InputBox = ({input, onChange, onConvertSubmit}:InputBoxProps) => {
+const Search = ({input, onChange, onConvert}:SearchProps) => {
     const inputRef = useRef<null | HTMLElement>(null)
 
     useEffect(() => {
-        inputRef.current!.focus()
+        if (inputRef.current)
+            inputRef.current.focus()
     }, [])
 
     return (
-        <div className="Searchbox">
+        <div className="Search">
             <h3>Input:</h3>
             <input type="text" value={input} onChange={onChange} ref={inputRef as any}/>
-            <Button className='button' onClick={() => onConvertSubmit(input)}>Convert</Button>
+            <Button className='button' onClick={() => onConvert(input)}>Convert</Button>
         </div>
     )
 }
 
-export default InputBox
+export default Search

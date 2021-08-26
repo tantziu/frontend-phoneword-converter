@@ -12,7 +12,6 @@ export const letters = {
 }
 
 export const convert = (input:string) => {
-    console.log("Convert called")
     const digits:number[] = String(input).split('').map(Number)
     let lists:string[][] = [[]]
     for (let digit of digits) {
@@ -26,7 +25,8 @@ export const convert = (input:string) => {
     for (let i=1; i<lists.length; i++) {
         result = cartesianProduct(result, lists[i])
     }
-    return result
+    let flat_result = result.map(word => word.join('')).flat()
+    return flat_result
 }
 
 const cartesianProduct = (a:string[][], b:string[]) => {

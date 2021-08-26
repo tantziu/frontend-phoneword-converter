@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home has a valid snapshot 1`] = `
+<div
+  className="HomePage"
+>
+  <div
+    className="Search"
+  >
+    <h3>
+      Input:
+    </h3>
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+    >
+      Convert
+    </button>
+  </div>
+  <div
+    className="table"
+  >
+    <h3>
+      Words:
+    </h3>
+    <ul />
+  </div>
+</div>
+`;
+
+exports[`Results has a valid snapshot 1`] = `
+<div
+  className="table"
+>
+  <h3>
+    Words:
+  </h3>
+  <ul>
+    <li>
+      ad
+    </li>
+    <li>
+      ae
+    </li>
+    <li>
+      af
+    </li>
+  </ul>
+</div>
+`;

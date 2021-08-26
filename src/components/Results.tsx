@@ -1,8 +1,8 @@
-type ResultsTableProps = {
+type ResultsProps = {
     words: string[]
 }
 
-const ResultsTable = ({words}:ResultsTableProps) => {
+const Results = ({words}:ResultsProps) => {
     return (
         <div className="table">
             <h3>Words:</h3>
@@ -15,4 +15,4 @@ const ResultsTable = ({words}:ResultsTableProps) => {
     )
 }
 
-export default ResultsTable
+export default Results

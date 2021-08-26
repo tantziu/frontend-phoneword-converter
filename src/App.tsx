@@ -4,10 +4,7 @@ import Home from './pages/Home'
 import './App.css';
 
 const App = () => {
-  
-
   return (
-    
     <Router>
       <div className="App">
       <Switch>

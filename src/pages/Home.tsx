@@ -1,5 +1,5 @@
-import ResultsTable from '../components/ResultsTable'
-import InputBox from '../components/InputBox'
+import Results from '../components/Results'
+import Search from '../components/Search'
 import {ChangeEvent, useState} from 'react';
 import {convert} from '../api/client'
 
@@ -8,8 +8,6 @@ const Home = () => {
     const [inputNumber, setInputNumber] = useState("")
 
     const onConvert = (inputNumber:string) => {
-        console.log("onConvert")
-        // event.preventDefault();
         const words:any = convert(inputNumber)
         setResults(words) 
     }   
@@ -23,10 +21,14 @@ const Home = () => {
    
     return (
         <div className="HomePage">
-            <InputBox input={inputNumber} onChange={onInputChange} onConvertSubmit={onConvert}/>
-            <ResultsTable words={results}/>
+            <Search input={inputNumber} onChange={onInputChange} onConvert={onConvert}/>
+            <Results words={results}/>
         </div>
     )
 }
 
 export default Home
+
+export {
+    Results
+}

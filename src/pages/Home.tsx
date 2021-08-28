@@ -1,15 +1,17 @@
 import Results from '../components/Results'
 import Search from '../components/Search'
 import {ChangeEvent, useState} from 'react';
-import {convert} from '../api/client'
+import {fetchWords} from '../api/client'
 
 const Home = () => {
     const [results, setResults] = useState([])
     const [inputNumber, setInputNumber] = useState("")
 
     const onConvert = (inputNumber:string) => {
-        const words:any = convert(inputNumber)
-        setResults(words) 
+        fetchWords(inputNumber)
+            .then(words => {
+                setResults(words)
+            })
     }   
 
     const onInputChange = (event:ChangeEvent) => {

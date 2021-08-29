@@ -2,46 +2,49 @@
 
 exports[`Home has a valid snapshot 1`] = `
 <div
-  className="HomePage"
+  className="Home"
 >
+  <header>
+    <h1>
+      Phoneword Convert
+    </h1>
+  </header>
   <div
-    className="Search"
+    className="content"
   >
-    <h3>
-      Input:
-    </h3>
-    <input
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <button
-      className="button"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="Search"
     >
-      Convert
-    </button>
-  </div>
-  <div
-    className="table"
-  >
-    <h3>
-      Words:
-    </h3>
-    <ul />
+      <input
+        className="searchInput"
+        onChange={[Function]}
+        placeholder="Type a number..."
+        type="text"
+        value=""
+      />
+      <button
+        className="Button disabled"
+        disabled={true}
+        onClick={[Function]}
+        type="button"
+      >
+        Convert
+      </button>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Results has a valid snapshot 1`] = `
 <div
-  className="table"
+  className="Results"
 >
   <h3>
     Words:
   </h3>
-  <ul>
+  <ul
+    className="resultsList"
+  >
     <li>
       ad
     </li>

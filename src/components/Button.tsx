@@ -1,3 +1,5 @@
+import '../styles/Button.scss'
+
 type Props = {
     className: string
     children: React.ReactNode
@@ -6,10 +8,11 @@ type Props = {
 }
 
 const Button = ({className, children, disabled, onClick}:Props) => {
+    const _className = disabled ?  className + " disabled" : className + " active"
     return (
         <button 
             type='button'
-            className={disabled ? className + " disabled" : className + " active"}
+            className={_className}
             onClick={onClick}
             disabled={disabled}
         >

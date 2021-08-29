@@ -24,6 +24,7 @@ describe('Home', () => {
 //     ReactDOM.unmountComponentAtNode(div)
 //   })
 // })
+
 describe('Results', () => {
     const props = {words: ['ad', 'ae', 'af']}
 

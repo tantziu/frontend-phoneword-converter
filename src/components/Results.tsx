@@ -1,12 +1,14 @@
+import '../styles/Results.scss'
+
 type ResultsProps = {
     words: string[]
 }
 
 const Results = ({words}:ResultsProps) => {
     return (
-        <div className="table">
-            {words.length > 0 ? <h3>Words:</h3> : null}
-            <ul>
+        <div className="Results">
+          <h3>Words:</h3>
+            <ul className="resultsList">
               {words.map(result => (
                 <li key={result}>{result}</li>
               ))}

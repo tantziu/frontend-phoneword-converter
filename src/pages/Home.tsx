@@ -3,6 +3,7 @@ import Search from '../components/Search'
 import {ChangeEvent, useState} from 'react';
 import Error from '../components/Error'
 import {fetchWords} from '../api/client'
+import '../styles/Home.scss'
 
 const Home = () => {
     const [results, setResults] = useState([])
@@ -34,12 +35,18 @@ const Home = () => {
     }
 
     return (
-        <div className="HomePage">
-            <Search input={inputNumber} validInput={validNumber} onChange={onInputChange} onConvert={onConvert}/>
-            {validNumber
-                ? <Results words={results}/>
-                : <Error />
-            }
+        <div className="Home">
+            <header>
+                <h1>Phoneword Convert</h1>
+            </header>
+
+            <div className="content">
+                <Search input={inputNumber} validInput={validNumber} onChange={onInputChange} onConvert={onConvert}/>
+                {validNumber
+                    ? (results.length > 0) ? <Results words={results}/> : null
+                    : inputNumber ? <Error /> : null
+                }
+            </div>
         </div>
     )
 }
@@ -47,5 +54,6 @@ const Home = () => {
 export default Home
 
 export {
-    Results
+    Results,
+    Search
 }

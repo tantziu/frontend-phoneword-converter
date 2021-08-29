@@ -1,0 +1,22 @@
+@import "color";
+
+.Button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background: transparent;
+    color: $color-blue-5;
+    cursor: pointer;
+
+    &.disabled {
+        cursor: default;
+        color: $color-black;
+    }
+
+    &.active {
+        &:hover {
+            color: $color-blue-6;
+        }
+    }
+    
+}

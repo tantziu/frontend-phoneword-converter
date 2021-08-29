@@ -1,5 +1,6 @@
 import Button from './Button'
 import {ChangeEvent, useEffect, useRef} from 'react';
+import '../styles/Search.scss'
 
 type SearchProps = {
     input:string
@@ -18,9 +19,15 @@ const Search = ({input, validInput, onChange, onConvert}:SearchProps) => {
 
     return (
         <div className="Search">
-            <h3>Input:</h3>
-            <input type="text" value={input} onChange={onChange} ref={inputRef as any}/>
-            <Button className='button' disabled={!validInput} onClick={() => onConvert(input)}>
+            <input 
+                className="searchInput"
+                type="text"
+                placeholder="Type a number..."
+                value={input}
+                onChange={onChange}
+                ref={inputRef as any}
+            />
+            <Button className='Button' disabled={!validInput} onClick={() => onConvert(input)}>
                 Convert
             </Button>
         </div>

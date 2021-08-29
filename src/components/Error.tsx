@@ -1,7 +1,9 @@
+import '../styles/Error.scss'
+
 const Error = () => {
     return(
-        <div>
-            <h1>Input must contain only digits</h1>
+        <div className="Error">
+            <h3>Input must contain only digits</h3>
         </div>
     )
 }

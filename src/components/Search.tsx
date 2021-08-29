@@ -1,6 +1,6 @@
+import '../styles/Search.scss'
 import Button from './Button'
 import {ChangeEvent, useEffect, useRef} from 'react';
-import '../styles/Search.scss'
 
 type SearchProps = {
     input:string

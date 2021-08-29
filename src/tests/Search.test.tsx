@@ -1,7 +1,5 @@
-import React from 'react';
+import Search from '../components/Search'
 import renderer, { ReactTestRenderer } from 'react-test-renderer'
-import ReactDOM from 'react-dom'
-import Search, {Button} from '../components/Search'
 
 describe('Search', () => {
     const searchProps = {

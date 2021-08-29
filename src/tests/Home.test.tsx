@@ -1,9 +1,7 @@
-import React from 'react';
-import TestRenderer from 'react-test-renderer'
-import ReactDOM from 'react-dom'
 import Home from '../pages/Home'
-import Results from '../components/Results'
-import axios from 'axios'
+import ReactDOM from 'react-dom'
+import TestRenderer from 'react-test-renderer'
+
 
 describe('Home', () => {
     it('render without crashing', () => {
@@ -19,12 +17,11 @@ describe('Home', () => {
         onClick:jest.fn()
     }
 
-    it('succeeds fetching data with a list', () => {
-        const words = ['wa','wb','wc','xa','xb','xc','ya','yb','yc','za','zb','zc']
-        const component = TestRenderer.create(<Home />)
+    // it('succeeds fetching data with a list', () => {
+    //     const words = ['wa','wb','wc','xa','xb','xc','ya','yb','yc','za','zb','zc']
+    //     const component = TestRenderer.create(<Home />)
         // expect(component.root.findByType(Results).props.words).toBe(words)
-        // expect(component.root.findByProps({className:"Results"}).children).toEqual
-    })
+    // })
 
     test('has a valid snapshot', () => {
         const component = TestRenderer.create(<Home/>)

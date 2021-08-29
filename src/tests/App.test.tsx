@@ -1,8 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer'
-import ReactDOM from 'react-dom'
-import { render, screen } from '@testing-library/react'
 import App from '../App'
+import ReactDOM from 'react-dom'
+import renderer from 'react-test-renderer'
 
 describe('App', () => {
   it('render without crashing', () => {

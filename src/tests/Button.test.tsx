@@ -1,5 +1,4 @@
 import renderer, { ReactTestRenderer} from 'react-test-renderer'
-import ReactDOM from 'react-dom'
 import Button from '../components/Button'
 
 describe('Button', () => {

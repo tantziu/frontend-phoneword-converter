@@ -16,14 +16,14 @@ describe('Results', () => {
     
 
     it('renders nine items', () => {
-        const component = renderer.create(<Results words={words} />)
+        const component = renderer.create(<Results words={words} onFilter={jest.fn()}/>)
 
         expect(component.root.findAllByType('li').length).toEqual(9)
     })
 
     test('has a valid snapshot', () => {
         const component = renderer.create(
-            <Results words={words} />
+            <Results words={words} onFilter={jest.fn()}/>
         )
         const tree = component.toJSON()
         expect(tree).toMatchSnapshot()

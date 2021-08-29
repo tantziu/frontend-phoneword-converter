@@ -1,9 +1,9 @@
+import '../styles/Home.scss'
+import Error from '../components/Error'
 import Results from '../components/Results'
 import Search from '../components/Search'
 import {ChangeEvent, useState} from 'react';
-import Error from '../components/Error'
-import {fetchWords} from '../api/client'
-import '../styles/Home.scss'
+import {fetchAllWords, fetchRealWords} from '../api/client'
 
 const Home = () => {
     const [results, setResults] = useState([])
@@ -13,7 +13,7 @@ const Home = () => {
     // const [isLoading, setIsLoading] = useState(false)
 
     const onConvert = (inputNumber:string) => {
-        fetchWords(inputNumber)
+        fetchAllWords(inputNumber)
             .then(words => {
                 setResults(words)
             })
@@ -25,6 +25,13 @@ const Home = () => {
         if (target)
             validateInput(target.value)
             setInputNumber(target.value)
+    }
+
+    const onFilter = () => {
+        fetchRealWords(inputNumber)
+            .then(words => {
+                setResults(words)
+            })
     }
 
     const validateInput = (value:string) => {
@@ -43,7 +50,7 @@ const Home = () => {
             <div className="content">
                 <Search input={inputNumber} validInput={validNumber} onChange={onInputChange} onConvert={onConvert}/>
                 {validNumber
-                    ? (results.length > 0) ? <Results words={results}/> : null
+                    ? (results.length > 0) ? <Results words={results} onFilter={onFilter}/> : null
                     : inputNumber ? <Error /> : null
                 }
             </div>

@@ -3,11 +3,12 @@ import {ChangeEvent, useEffect, useRef} from 'react';
 
 type SearchProps = {
     input:string
+    validInput: boolean
     onChange:(event:ChangeEvent) => void
     onConvert:(inputNumber:string) => void 
 }
 
-const Search = ({input, onChange, onConvert}:SearchProps) => {
+const Search = ({input, validInput, onChange, onConvert}:SearchProps) => {
     const inputRef = useRef<null | HTMLElement>(null)
 
     useEffect(() => {
@@ -19,7 +20,9 @@ const Search = ({input, onChange, onConvert}:SearchProps) => {
         <div className="Search">
             <h3>Input:</h3>
             <input type="text" value={input} onChange={onChange} ref={inputRef as any}/>
-            <Button className='button' onClick={() => onConvert(input)}>Convert</Button>
+            <Button className='button' disabled={!validInput} onClick={() => onConvert(input)}>
+                Convert
+            </Button>
         </div>
     )
 }

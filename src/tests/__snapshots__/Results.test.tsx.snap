@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button has a valid snapshot 1`] = `
+<button
+  className="Button active"
+  disabled={false}
+  onClick={[MockFunction]}
+  type="button"
+>
+  Convert
+</button>
+`;
+
+exports[`Results has a valid snapshot 1`] = `
+<div
+  className="Results"
+>
+  <h3>
+    Words:
+  </h3>
+  <ul
+    className="resultsList"
+  >
+    <li>
+      adg
+    </li>
+    <li>
+      adh
+    </li>
+    <li>
+      adi
+    </li>
+    <li>
+      aeg
+    </li>
+    <li>
+      aeh
+    </li>
+    <li>
+      aei
+    </li>
+    <li>
+      afg
+    </li>
+    <li>
+      afh
+    </li>
+    <li>
+      afi
+    </li>
+  </ul>
+</div>
+`;

@@ -35,3 +35,5 @@ const Search = ({input, validInput, onChange, onConvert}:SearchProps) => {
 }
 
 export default Search
+
+export {Button}

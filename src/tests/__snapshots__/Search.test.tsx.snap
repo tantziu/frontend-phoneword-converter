@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search has a valid snapshot 1`] = `
+<div
+  className="Search"
+>
+  <input
+    className="searchInput"
+    onChange={[MockFunction]}
+    placeholder="Type a number..."
+    type="text"
+    value="567"
+  />
+  <button
+    className="Button disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    Convert
+  </button>
+</div>
+`;

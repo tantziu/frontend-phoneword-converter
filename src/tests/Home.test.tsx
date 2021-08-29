@@ -1,7 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer'
+import TestRenderer from 'react-test-renderer'
 import ReactDOM from 'react-dom'
-import Home, {Results} from '../pages/Home'
+import Home from '../pages/Home'
+import Results from '../components/Results'
+import axios from 'axios'
 
 describe('Home', () => {
     it('render without crashing', () => {
@@ -10,34 +12,22 @@ describe('Home', () => {
         ReactDOM.unmountComponentAtNode(div)
     })
 
-    test('has a valid snapshot', () => {
-        const component = renderer.create(<Home/>)
-        const tree = component.toJSON()
-        expect(tree).toMatchSnapshot()
-    })
-})
+    const buttonProps = {
+        className: "Button", 
+        children:"Convert", 
+        disabled: false, 
+        onClick:jest.fn()
+    }
 
-// describe('Search', () => {
-//   it('renders without crashing', () => {
-//     const div = document.createElement('div')
-//     ReactDOM.render(<Search/>, div)
-//     ReactDOM.unmountComponentAtNode(div)
-//   })
-// })
-
-describe('Results', () => {
-    const props = {words: ['ad', 'ae', 'af']}
-
-    it('render without crashing', () => {
-        const div = document.createElement('div')
-        ReactDOM.render(<Results {...props}/>, div)
-        ReactDOM.unmountComponentAtNode(div)
+    it('succeeds fetching data with a list', () => {
+        const words = ['wa','wb','wc','xa','xb','xc','ya','yb','yc','za','zb','zc']
+        const component = TestRenderer.create(<Home />)
+        // expect(component.root.findByType(Results).props.words).toBe(words)
+        // expect(component.root.findByProps({className:"Results"}).children).toEqual
     })
 
     test('has a valid snapshot', () => {
-        const component = renderer.create(
-            <Results {...props} />
-        )
+        const component = TestRenderer.create(<Home/>)
         const tree = component.toJSON()
         expect(tree).toMatchSnapshot()
     })
